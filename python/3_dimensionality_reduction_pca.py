@@ -7,10 +7,6 @@ from sklearn.preprocessing import MinMaxScaler
 Dimensionality reduction using PCA
 Source: https://machinelearningmastery.com/feature-selection-machine-learning-python/
 https://www.mikulskibartosz.name/pca-how-to-choose-the-number-of-components/
-
-****http://www.billconnelly.net/?p=697****** redo with this
-
-Explanation:
 '''
 
 #reading file into array
