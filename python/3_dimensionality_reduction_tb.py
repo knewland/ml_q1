@@ -6,8 +6,6 @@ from sklearn.feature_selection import SelectFromModel
 '''
 Dimensionality reduction using Tree-based feature selection
 Source: https://scikit-learn.org/stable/modules/feature_selection.html
-
-Explanation:
 '''
 
 #reading file into array
