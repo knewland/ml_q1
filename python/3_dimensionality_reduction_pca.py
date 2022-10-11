@@ -15,7 +15,7 @@ with open('data_x.npy','rb') as f:
 with open('data_y.npy','rb') as f:
     data_y = np.load(f)
 
-    
+print("Original number of attributes:", data_x.shape[1])
 #Normalizing the x-axis data between 0 and 1 before PCA is performed
 scaler = MinMaxScaler()
 rescaled_data_x = scaler.fit_transform(data_x)
@@ -26,10 +26,9 @@ pca = PCA(n_components=explained_variance)
 pca.fit(rescaled_data_x)
 reduced = pca.transform(rescaled_data_x)
 
-#this is new
 scaler = MinMaxScaler()
 reduced = scaler.fit_transform(reduced)
-print(reduced.shape)
+print("New number of attributes (PCA):", reduced.shape[1])
 
 
 
