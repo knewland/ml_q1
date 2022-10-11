@@ -13,10 +13,10 @@ with open('data_x.npy','rb') as f:
     data_x = np.load(f)
 with open('data_y.npy','rb') as f:
     data_y = np.load(f)
-
+print("Original number of attributes:", data_x.shape[1])
 #selects top 10 percent of attributes
 x_new = SelectPercentile(chi2, percentile=10).fit_transform(data_x, data_y)
-print(x_new.shape)
+print("New number of attributes (US):", x_new.shape[1])
 
 #saving numpy array for next step
 with open('us_data_x.npy','wb') as f:
