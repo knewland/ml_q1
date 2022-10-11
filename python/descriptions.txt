@@ -1,1 +1,5 @@
-
+1 - replacing phishing and legitimate class labels with 0 and 1
+2 - replacing invalid domain_age values with mean
+3 - different attribute selection methods
+4 - training and test split
+5 - different classification models
