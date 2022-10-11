@@ -1,5 +1,4 @@
 #source: https://stackoverflow.com/questions/17140886/how-to-search-and-replace-text-in-a-file
-#read in the csv file
 import re
 
 filename = 'dataset_phishing.csv'
@@ -12,7 +11,6 @@ for line in file.readlines():
             rgx = re.sub(r"^.*[^0-9],","",line)
             lines.append(rgx)
         elif(num == 0):
-            print('n')
             rgx = re.sub(r"^url,","",line)
             lines.append(rgx)
         num+=1
@@ -59,6 +57,3 @@ filename = 'dataset_phishing_classes_renamed.csv'
 with open(filename, 'w') as file:
     file.write(data)
 file.close()
-
-
-
