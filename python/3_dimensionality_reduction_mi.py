@@ -10,22 +10,23 @@ https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.mutu
 Explanation: The mutual information score ranges from 0 to infinity. A low score indicates that the attribute has a weak correlation with the class, meaning it should be eliminated from the dataset that will be used to train the model.
 '''
 
-tolerance = 0.2
+
 
 #reading file into array
 with open('data_x.npy','rb') as f:
     data_x = np.load(f)
 with open('data_y.npy','rb') as f:
     data_y = np.load(f)
-
+tolerance = 0.2
 mi_scores = mi(data_x, data_y)
+print("Mutual information scores:")
 print(mi_scores) #prints an array of all the mutual information scores for each attribute
-print(len(mi_scores))
+#print(len(mi_scores))
 
-mi_score_selected_index = np.where(mi_scores > tolerance)[0]
-data_x_new = data_x[:,mi_score_selected_index]
-
-print(data_x_new.shape)
+mi_index = np.where(mi_scores > tolerance)[0]
+data_x_new = data_x[:,mi_index]
+print("Original number of attributes:", data_x.shape[1])
+print("New number of attributes (MI):", data_x_new.shape[1])
 
 
 #saving numpy array for next step
