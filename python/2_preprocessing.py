@@ -43,5 +43,6 @@ with open('data_x.npy','wb') as f:
     np.save(f, data_x)
 with open('data_y.npy','wb') as f:
     np.save(f, data_y)
-
-
+    
+np.savetxt("processed_data_x.csv", data_x, fmt="%f", delimiter=",")
+np.savetxt("processed_data_y.csv", data_y, fmt="%f", delimiter=",")
