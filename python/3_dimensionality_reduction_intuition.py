@@ -41,18 +41,16 @@ for column in range(new_data_x.shape[1]):
     oneCount = 0
     num += 1
 
-#deleting columns
+#deleting columns that were marked
 dlt = list(deletion)
 new_data_x = np.delete(new_data_x, dlt, axis=1)
 
 print()
-print("new number of attributes: ")
-print(new_data_x.shape[1])
+print("Original number of attributes:", data_x.shape[1])
+print("New number of attributes (Intuition):", new_data_x.shape[1])
 
 #saving numpy array for next step
 with open('intuition_data_x.npy','wb') as f:
     np.save(f, new_data_x)
 with open('intuition_data_y.npy','wb') as f:
     np.save(f, data_y)
-
-
