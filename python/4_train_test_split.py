@@ -10,7 +10,7 @@ for i in range(len(prefixes)):
         data_y = np.load(f)
 
     #split into train test set: simple random sampling
-    x_train, x_test, y_train, y_test = train_test_split(data_x, data_y, test_size=0.25);
+    x_train, x_test, y_train, y_test = train_test_split(data_x, data_y, test_size=0.25)
 
     y_train = np.vstack(y_train)
     train = np.concatenate((x_train, y_train),1)
